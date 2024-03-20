@@ -5,15 +5,15 @@ const port = 3000;
 app.use(express.json());
 
 // @ts-ingnore
-app.get('/', (req, res)=> {
-    res.status(200).send("Hello, world")
+app.get("/", (req, res)=> {
+    res.status(200).send("Hello, world!")
 });
 
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`)
+    console.log(`Server is running on http://localhost:${port}`);
 });
 
-//ERROR HANDLING
+// ERROR HANDLING
 
 // 404 error handler
 // @ts-ignore
@@ -32,6 +32,6 @@ app.use((error, req, res, next) => {
     res.json({
         error: {
             message: error.mesage,
-        }
+        },
     });
 });
